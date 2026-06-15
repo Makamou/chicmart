@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Responsive overrides
+   Targets: 320, 375, 390, 430px (phones), 768px (tablet), 1024px+ (desktop),
+   and landscape orientation on short viewports.
+   Loaded after index-Cu6p8dZB.css so these rules win on equal specificity.
+   ========================================================================== */
+
+/* ---- Global safety net ---- */
+html, body {
+  overflow-x: hidden;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+
+/* ---- Critical fix: search input was overflowing the header on phones ----
+   `.search-bar` had flex:1 + width:0 but no min-width, so flex's default
+   min-width:auto (= intrinsic input width, ~170px) forced the header wider
+   than the viewport on every screen narrower than ~675px. */
+.header .search-bar {
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Phones: 320 / 375 / 390 / 430px
+   Stack the header into two rows so nothing gets crushed or clipped.
+   ========================================================================== */
+@media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .header .left-section {
+    order: 1;
+  }
+  .header .right-section {
+    order: 2;
+    width: auto;
+    flex-shrink: 0;
+  }
+  .header .middle-section {
+    order: 3;
+    flex-basis: 100%;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Tighter spacing for the "Returns & Orders" / "Cart" links */
+  .header .orders-link {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .header .orders-text {
+    font-size: 13px;
+  }
+
+  /* Header is now two rows tall - give fixed-position pages more top space */
+  .home-page,
+  .orders-page,
+  .tracking-page {
+    margin-top: 150px;
+  }
+  .not-found-message {
+    margin-top: 200px;
+  }
+
+  /* Checkout: reclaim horizontal space on narrow phones */
+  .checkout-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .checkout-page .cart-item-container,
+  .checkout-page .payment-summary {
+    padding: 12px;
+  }
+  .checkout-page .cart-item-details-grid {
+    column-gap: 12px;
+  }
+
+  /* Checkout header: avoid the title wrapping to two lines */
+  .checkout-header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .checkout-header .checkout-header-left-section,
+  .checkout-header .checkout-header-right-section {
+    width: auto;
+  }
+  .checkout-header .checkout-header-middle-section {
+    font-size: 16px;
+    margin-right: 0;
+  }
+}
+
+/* ---- Extra-narrow phones (320px and similar) ---- */
+@media (max-width: 360px) {
+  .header .mobile-logo {
+    height: 56px;
+  }
+  .header .orders-text {
+    font-size: 11px;
+  }
+  .header .cart-text {
+    display: none;
+  }
+  .header .cart-quantity {
+    right: 8px;
+  }
+}
+
+/* ==========================================================================
+   Tablet: 768px
+   ========================================================================== */
+@media (min-width: 481px) and (max-width: 1000px) {
+  /* Center the checkout content instead of leaving it pinned left */
+  .checkout-page .main {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==========================================================================
+   Landscape phones with limited height
+   ========================================================================== */
+@media (orientation: landscape) and (max-height: 500px) {
+  .header {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .header .mobile-logo {
+    height: 46px;
+  }
+  .header .logo {
+    width: 120px;
+  }
+  .home-page,
+  .orders-page,
+  .tracking-page {
+    margin-top: 80px;
+  }
+  .checkout-page {
+    margin-top: 110px;
+  }
+  .checkout-header {
+    height: 50px;
+  }
+  .not-found-message {
+    margin-top: 110px;
+  }
+}
+
+/* ==========================================================================
+   Touch target / tap-size improvements (phones + tablets)
+   ========================================================================== */
+@media (max-width: 1000px) {
+  .home-page .add-to-cart-button {
+    min-height: 40px;
+  }
+  .checkout-page .delivery-option-input {
+    width: 18px;
+    height: 18px;
+  }
+}

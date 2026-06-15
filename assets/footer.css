@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Site footer — ChickMart ("Modern Elegance") theme
+   Loaded after polish.css. The footer markup lives in index.html as a
+   sibling of #root, so it appears at the bottom of every page.
+   ========================================================================== */
+
+.site-footer {
+  background-color: #241f19;
+  color: #f3f2f2;
+  margin-top: 60px;
+  border-top: 1px solid rgba(173, 123, 5, 0.35);
+  padding-left: 40px;
+  padding-right: 30px;
+}
+
+.site-footer-content {
+  margin: 0 auto;
+  padding: 20px 32px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .site-footer-content {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+}
+@media (min-width: 1024px) {
+  .site-footer-content {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* ---- Brand block ----
+   Width matches .header .left-section (208px / 230px at 1024px+) so the
+   footer logo lines up directly under the navbar logo. */
+.site-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 208px;
+  flex-shrink: 0;
+  margin-right: 140px;
+}
+@media (min-width: 1024px) {
+  .site-footer-brand {
+    width: 230px;
+  }
+}
+.site-footer-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+.site-footer-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ad7b05;
+  letter-spacing: 0.5px;
+}
+.site-footer-tagline {
+  font-size: 12px;
+  color: #c9c2b8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* ---- Link columns ---- */
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.site-footer-column h4 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.site-footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.site-footer-column a {
+  color: #c9c2b8;
+  text-decoration: none;
+  font-size: 14px;
+}
+.site-footer-column a:hover {
+  color: #ad7b05;
+}
+
+/* ---- Bottom bar ---- */
+.site-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px 32px 24px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  color: #968d80;
+}
+@media (min-width: 768px) {
+  .site-footer-bottom {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+}
+@media (min-width: 1024px) {
+  .site-footer-bottom {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+.site-footer-bottom a {
+  color: #968d80;
+  text-decoration: none;
+}
+.site-footer-bottom a:hover {
+  color: #ad7b05;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .site-footer-content {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .site-footer-brand {
+    width: auto;
+    margin-right: 0;
+  }
+  .site-footer-links {
+    width: 100%;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer-content {
+    padding: 32px 32px 20px;
+  }
+  .site-footer-bottom {
+    padding: 14px 32px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .site-footer-links {
+    gap: 24px 32px;
+  }
+  .site-footer-column {
+    min-width: 45%;
+  }
+}

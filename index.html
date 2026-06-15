@@ -13,11 +13,63 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/chicmart/assets/index-B-Xt6i-f.js"></script>
+    <script type="module" crossorigin src="/chicmart/assets/index-BCfrojhm.js"></script>
     <link rel="stylesheet" crossorigin href="/chicmart/assets/index-Cu6p8dZB.css">
+    <link rel="stylesheet" href="/chicmart/assets/responsive-overrides.css">
+    <link rel="stylesheet" href="/chicmart/assets/polish.css">
+    <link rel="stylesheet" href="/chicmart/assets/footer.css">
+    <link rel="icon" type="image/png" href="/chicmart/images/home-favicon.png">
   </head>
 
   <body>
     <div id="root"></div>
+
+    <footer class="site-footer">
+      <div class="site-footer-content">
+        <div class="site-footer-brand">
+          <img src="/chicmart/images/logo-0.png" alt="ChickMart" class="site-footer-logo">
+          <div>
+            <div class="site-footer-name">ChickMart</div>
+            <div class="site-footer-tagline">Modern Elegance</div>
+          </div>
+        </div>
+
+        <div class="site-footer-links">
+          <div class="site-footer-column">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="/">All Products</a></li>
+              <li><a href="/orders">Your Orders</a></li>
+              <li><a href="/checkout">Cart</a></li>
+            </ul>
+          </div>
+          <div class="site-footer-column">
+            <h4>Help</h4>
+            <ul>
+              <li><a href="/orders">Track an Order</a></li>
+              <li><a href="/checkout">Returns &amp; Refunds</a></li>
+              <li><a href="/">Customer Service</a></li>
+            </ul>
+          </div>
+          <div class="site-footer-column">
+            <h4>About</h4>
+            <ul>
+              <li><a href="/">Our Story</a></li>
+              <li><a href="/">Quality Promise</a></li>
+              <li><a href="/">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer-bottom">
+        <span>&copy; <span id="footer-year"></span> ChickMart. All rights reserved.</span>
+        <span>Crafted with care &mdash; Modern Elegance</span>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
